@@ -1,6 +1,8 @@
 # Machine Learning Project Checklist
 A successful well-organized Machine Learning Project shall start with a thoughtful planning. This is the checklist provided by Geron Aurelien on Hands-on machine learning book.
 
+![2022-09-05 (3)](https://user-images.githubusercontent.com/103903785/188495451-d9e32e2f-2260-4e0c-8c8c-373d04435755.png)
+
 ## 1. Look at the big Picture
 - [ ] **Frame The Problem<br/>**
   - What exactly is the objective? <br/>
@@ -20,7 +22,7 @@ A successful well-organized Machine Learning Project shall start with a thoughtf
    $ export ML_PATH="$HOME/ml" # You can change the path if you prefer
    $ mkdir -p $ML_PATH 
 ```
-## must be continued ^^^^^
+- Install needed modules: Jupytar, NumPy, pandas, Matplotlib, and Scikit-Learn
 
 - [ ] **Download the Data/ Collect the Data**<br/>
   - Determine how much data you need<br/>
@@ -42,9 +44,9 @@ A successful well-organized Machine Learning Project shall start with a thoughtf
   - Pick some instances randomely, 20% of the dataset or less if the data set is huge, and set them aside
 
 ## **3. Discover and Visualize the Data to Gain Insights**<br/>
-  - Discover your data(training data) more deeply <br/>
-  - Sample an exploration set if your training set is very large<br/>
-  - Make a copy not to harm your training set<br/>
+  _**Discover your data(training data) more deeply**_ <br/>
+  _**Sample an exploration set if your training set is very large**_<br/>
+  _**Make a copy not to harm your training set**_<br/>
 - [ ] **Visualizing Geographical Data**<br/>
   - A good idea is to create a scatter plot of all districts to visualize the data<br/>
 - [ ] **Looking for Correlations**<br/>
@@ -56,19 +58,25 @@ A successful well-organized Machine Learning Project shall start with a thoughtf
   - The point is to start off on the right foot and gain insights
   
 ## **4. Prepare the Data for Machine Learning Algorithms**
-  - First, Revert to a clean training set (by copying)<br/>
-  - Separate the predictors and the labels
+  _**First, Revert to a clean training set (by copying)**_ <br/>
+  _**Separate the predictors and the labels**_
 - [ ] **Data Cleaning**<br/>
   - Fix missing features
     - Get rid of the corresponding districts<br/>
     - Get rid of the whole attribute<br/>
     - Set the values to some value (zero, the mean, the median, etc.)
 - [ ] **Handling Text and Categorical Attributes**<br/>
-  - Select an encoder
+  - Select an encoder, etc.
 - [ ] **Custom Transformers**<br/>
-  - ^^^^^^^^^^^
+  - Create your own transformers for tasks such as cleanup operations or combining specific attributes
 - [ ] **Feature Scaling**<br/>
+  - One of the important transformations
+  - Get all the attributes to have the same scale
+  - Common ways: min-max scaling and standradization
+
+Note: _Scaling the target values is not required_
 - [ ] **Transformation Pipelines**<br/>
+  - Scikit-Learn provides the "Pipeline" class to help with sequences of transformations
 
 Note: _You should write functions for this purpose, not manually:_
   1. _The ability to reproduce these transformations on any dataset easily_<br/>
@@ -97,6 +105,7 @@ dard deviation of the performance measure on the N folds
 make different types of errors
 
 ## **6. Fine-Tune Your Model**
+_**Some ways to fine-tune a model**_
 - [ ] **Grid Search**<br/>
   - Fine for exploring relatively few combinations
 - [ ] **Randomized Search**<br/>
@@ -121,5 +130,14 @@ make different types of errors
     
 ![deploy](https://user-images.githubusercontent.com/103903785/188489588-cc7559f6-7bf5-4cac-a0ee-8002281a28e3.jpg)
 
+  - Mentoring the model's live performance
+    - One way: human raters to evaluate the live model
+    - Another way: If the data keeps evolving
+      - Collect fresh data regularly and label it (e.g., using human raters)
+      -  Write a script to train the model and fine-tune the hyperparameters automatically. This script could run automatically, for example every day or every week, depending on your needs
+      -  Write another script that will evaluate both the new model and the previous model on the updated test set, and deploy the model to production if the performance has not decreased (if it did, make sure you investigate why)
+      -  Evaluate the model's input data quality 
+
+  - Male sure you keep backups of every model you create and have thee process and tools in place to roll back to a previous model quickly
 
 ## **Try It Out!**
