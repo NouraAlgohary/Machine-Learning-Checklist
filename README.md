@@ -23,7 +23,7 @@ A successful well-organized Machine Learning Project shall start with a thoughtf
 ## must be continued ^^^^^
 
 - [ ] **Download the Data/ Collect the Data**<br/>
-  - Determine how much data you need
+  - Determine how much data you need<br/>
   - Find a data source
   - Get your credentials and access authorizations<br/>
   - Get the data
@@ -62,7 +62,7 @@ A successful well-organized Machine Learning Project shall start with a thoughtf
   - Fix missing features
     - Get rid of the corresponding districts<br/>
     - Get rid of the whole attribute<br/>
-    - Set the values to some value (zero, the mean, the median, etc.)<br/>
+    - Set the values to some value (zero, the mean, the median, etc.)
 - [ ] **Handling Text and Categorical Attributes**<br/>
   - Select an encoder
 - [ ] **Custom Transformers**<br/>
@@ -98,10 +98,28 @@ make different types of errors
 
 ## **6. Fine-Tune Your Model**
 - [ ] **Grid Search**<br/>
+  - Fine for exploring relatively few combinations
 - [ ] **Randomized Search**<br/>
+  - Preferable when the search space is large
+  - By setting the number of iterations, you have more control over the computing budget you want to allocate to the hyperparameter search
 - [ ] **Ensemble Methods**<br/>
+  -  Combining the models that perform best. The group(ensemble) will often perform better than the best individual model
 - [ ] **Analyze the Best Models and Their Errors**<br/>
+  - Try checking the importance scores 
 - [ ] **Evaluate Your System on the Test Set**<br/>
+  - Get the predictors and the labels from your test set, run your pipeline, and evaluate the final model on the test set.
 
+**Prelaunch Phase: Present your solution (highlighting what you have learned, what worked and what did not, what assumptions were made, and what your system's limitations are), document everything, and create nice presentations with clear visualizations and easy-to-remember statements.**
 ## **7. Launch, Monitor, and Maintain Your System**
-## **8. Try It Out**
+  - Get your solution ready for production
+    - Polish the code
+    - Write documentation and tests
+  - Deploy your model to your production environment 
+    - Save the trained Sckikit-Learn model
+    - Load the trained model within your production environment
+    - Use it to make predictions<br/>
+    
+![deploy](https://user-images.githubusercontent.com/103903785/188489588-cc7559f6-7bf5-4cac-a0ee-8002281a28e3.jpg)
+
+
+## **Try It Out!**
